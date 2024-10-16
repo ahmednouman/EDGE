@@ -8,8 +8,11 @@ This firmware is designed with a variety of techniques for task communication, r
 - **Polling, Interrupts, and DMA**: Implemented a blend of these mechanisms to balance performance with simplicity depending on the peripheral.
 - **Shared Resource Management**: A circular buffer of LIFO type was used to synchronize and serialize data access between tasks and ISRs.
 
-![FreeRTOS Architecture Diagram](./images/taskArch.png)
-![Circular Buffer Diagram](./images/buf.png)
+<div align="center">
+    <img src="./images/taskArch.png" alt="FreeRTOS Architecture Diagram" width="600"/>
+    <br>
+    <img src="./images/buf.png" alt="Circular Buffer Diagram" width="300"/>
+</div>
 
 ## Temperature Sensor
 - The temperature sensor returns two bytes of temperature data followed by a third byte for CRC.
@@ -34,7 +37,9 @@ Additionally, the buffer width should be increased from 16-bit to 32-bit to hand
 
 - **Control Algorithm**: Could be improved with the tachometer signal as a closed-loop feedback.
 
-![Payload](./images/clk.png)
+<div align="center">
+    <img src="./images/clk.png" alt="Payload" width="400"/>
+</div>
 
 ## ADC Readings
 - **Interrupt-Based ADC Conversion**: The ADC readings are handled through an interrupt-driven approach to ensure non-blocking and efficient conversion.
@@ -46,7 +51,10 @@ Additionally, the buffer width should be increased from 16-bit to 32-bit to hand
 
 ## Information Messages
 - **USB VCP**: All information messages are directed to the USB Virtual COM Port (VCP) at a baud rate of 115200.
-![Payload](./images/payload.png)
+<div align="center">
+    <img src="./images/payload.png" alt="Payload" width="300"/>
+</div>
+
 
 ## Watchdog Timer
 - **Implemented Watchdog**: Not explicitly required by the project but considered a good design practice. Ensures the system resets if a task fails to refresh the watchdog in time.
@@ -96,4 +104,7 @@ The log messages are Enabled or disabled using the ENABLE_LOGGING macro in loggi
     #define LOG(level, format, ...)
 #endif
 ```
-![Payload](./images/log.png)
+<div align="center">
+    <img src="./images/log.png" alt="Log" width="400"/>
+</div>
+
