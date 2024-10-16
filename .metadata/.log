@@ -1,0 +1,89 @@
+!SESSION 2024-10-14 20:47:42.708 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Framework arguments:  C:\Users\AhmedAli\Desktop\New folder\EDGE\AdvancedConceptsProject\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\AhmedAli\Desktop\New folder\EDGE\AdvancedConceptsProject\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-14 20:48:24.776
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-14 20:48:24.792
+!MESSAGE Log4j2 initialized with config file C:\Users\AhmedAli\Desktop\New folder\EDGE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-14 20:48:29.284
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-14 20:48:36.478
+!MESSAGE Indexed 'AdvancedConceptsProject' (43 sources, 190 headers) in 5.4 sec: 20,516 declarations; 102,992 references; 8 unresolved inclusions; 210 syntax errors; 1,846 unresolved names (1.5%)
+!SESSION 2024-10-14 20:49:50.011 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Framework arguments:  C:\Users\AhmedAli\Desktop\New folder\EDGE\AdvancedConceptsProject\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\AhmedAli\Desktop\New folder\EDGE\AdvancedConceptsProject\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-14 20:49:56.674
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-14 20:49:56.676
+!MESSAGE Log4j2 initialized with config file C:\Users\AhmedAli\Desktop\New folder\EDGE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-14 20:50:02.869
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-14 20:50:08.595
+!MESSAGE Indexed 'AdvancedConceptsProject' (42 sources, 146 headers) in 5.52 sec: 17,128 declarations; 97,448 references; 1 unresolved inclusions; 92 syntax errors; 240 unresolved names (0.21%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-14 21:01:20.866
+!MESSAGE Indexed 'AdvancedConceptsProject' (54 sources, 181 headers) in 2.38 sec: 20,067 declarations; 110,450 references; 2 unresolved inclusions; 229 syntax errors; 249 unresolved names (0.19%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 00:44:19.546
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 11 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 00:44:19.549
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 00:44:19.553
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 11 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 00:44:19.554
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 23:40:15.667
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 27 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 23:40:15.669
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 23:40:15.673
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 27 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-15 23:40:15.674
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:06:18.935
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 49 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:06:18.936
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:06:18.938
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 49 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:06:18.938
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:24:13.545
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 51 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:24:13.547
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:24:13.549
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 51 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-16 11:24:13.549
+!MESSAGE Existing sessions are:

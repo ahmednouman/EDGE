@@ -1,0 +1,175 @@
+#include "circular_buffer.h"
+
+
+void fifoInsert(circ_buf* cbuf, uint16_t data) {
+    cbuf->data[cbuf->head++] = data;
+    cbuf->head &= (CIRCULAR_BUF_SIZE - 1);
+
+    if (cbuf->head == cbuf->tail) {
+        cbuf->tail++;
+        cbuf->tail &= (CIRCULAR_BUF_SIZE - 1);
+    }
+}
+
+uint16_t fifoLook(circ_buf* cbuf, uint16_t n) {
+    uint16_t look_addr = cbuf->tail + n;
+    look_addr &= (CIRCULAR_BUF_SIZE - 1);
+    return cbuf->data[look_addr];
+}
+
+uint8_t fifoIn(circ_buf* cbuf) {
+    return (cbuf->head - cbuf->tail) & (CIRCULAR_BUF_SIZE - 1);
+}
+
+void fifoInc(circ_buf* cbuf, uint16_t n) {
+    int temp;
+
+    if (n >= fifoIn(cbuf)) {
+        temp = cbuf->tail + fifoIn(cbuf);
+    } else {
+        temp = cbuf->tail + n;
+        temp &= (CIRCULAR_BUF_SIZE - 1);
+    }
+    cbuf->tail = temp;
+}
+
+void fifoPop(circ_buf* cbuf, uint16_t* dest_buf, uint16_t n) {
+    uint16_t available_data = fifoIn(cbuf);
+    if (n > available_data) {
+        n = available_data;
+    }
+
+    for (uint16_t i = 0; i < n; i++) {
+        dest_buf[i] = fifoLook(cbuf, i);
+    }
+
+    fifoInc(cbuf, n);
+}
+
+void lifoPush(circ_buf* cbuf, uint16_t data) {
+    cbuf->data[cbuf->head++] = data;
+    cbuf->head &= (CIRCULAR_BUF_SIZE - 1);
+
+    if (cbuf->head == cbuf->tail) {
+        cbuf->tail++;
+        cbuf->tail &= (CIRCULAR_BUF_SIZE - 1);
+    }
+}
+
+bool lifoPop(circ_buf* cbuf, uint16_t* dest_buf, uint16_t n) {
+    uint16_t available_data = (cbuf->head - cbuf->tail) & (CIRCULAR_BUF_SIZE - 1);
+
+    if (available_data == 0) {
+        return false;
+    }
+
+    if (n > available_data) {
+        n = available_data;
+    }
+
+    for (uint16_t i = 0; i < n; i++) {
+        cbuf->head--;
+        cbuf->head &= (CIRCULAR_BUF_SIZE - 1);
+        dest_buf[i] = cbuf->data[cbuf->head];
+    }
+
+    return true;
+}
+
+uint16_t lifoPeek(circ_buf* cbuf, uint16_t n) {
+    uint16_t peek_addr = (cbuf->head - 1 - n) & (CIRCULAR_BUF_SIZE - 1);
+    return cbuf->data[peek_addr];
+}
+
+
+
+//void insertbuf(circ_buf* cbuf, uint16_t data){
+//    cbuf->data[cbuf->head++] = data;
+//    cbuf->head &= (CIRCULAR_BUF_SIZE - 1);
+//    if (cbuf->head == cbuf->tail){
+//        cbuf->tail++;
+//        cbuf->tail &= (CIRCULAR_BUF_SIZE - 1);
+//    }
+//}
+//
+//uint16_t lookbuf(circ_buf* cbuf,  uint16_t n){
+//    uint16_t look_addr = cbuf->tail + n;
+//    look_addr &= (CIRCULAR_BUF_SIZE - 1);
+//    return cbuf->data[look_addr];
+//}
+//
+//uint8_t inbuf(circ_buf* cbuf){
+//    return (cbuf->head - cbuf->tail) & (CIRCULAR_BUF_SIZE - 1);
+//}
+//
+//void incbuf(circ_buf* cbuf, uint16_t n){
+//    int temp;
+//
+//    if (n >= inbuf(cbuf)) {
+//        temp = cbuf->tail + inbuf(cbuf);
+//    }else{
+//        temp = cbuf->tail + n;
+//        temp &= (CIRCULAR_BUF_SIZE - 1);
+//    }
+//    cbuf->tail = temp;
+//}
+//
+//void popbuf(circ_buf* cbuf, uint16_t* dest_buf, uint16_t n) {
+//    uint16_t available_data = inbuf(cbuf);
+//    if (n > available_data) {
+//        n = available_data;
+//    }
+//
+//    for (uint16_t i = 0; i < n; i++) {
+//        dest_buf[i] = lookbuf(cbuf, i);
+//    }
+//
+//    incbuf(cbuf, n);
+//}
+
+//int main() {
+//    circ_buf my_buf = {{0}, 0, 0};  // Initialize the circular buffer
+//    uint8_t dest[8];  // Destination buffer to read into
+//    uint8_t i;
+//
+//    // Insert 10 bytes (less than the buffer size) into the buffer
+//    for (i = 0; i < 10; i++) {
+//        insertbuf(&my_buf, i + 0x41);  // Insert ASCII letters 'A' to 'J'
+//    }
+//
+//    printf("After inserting 10 bytes (A-J):\n");
+//    printf("Head: %u, Tail: %u\n", my_buf.head, my_buf.tail);
+//    printf("Buffer contains %u bytes.\n\n", inbuf(&my_buf));
+//
+//    // Test 1: Reading first 5 bytes
+//    readbuf_into_buffer(&my_buf, dest, 5);
+//    printf("After reading first 5 bytes (A-E):\n");
+//    printf("Head: %u, Tail: %u\n", my_buf.head, my_buf.tail);
+//    printf("Read bytes: ");
+//    for (i = 0; i < 5; i++) {
+//        printf("%c ", dest[i]);  // Should print A B C D E
+//    }
+//    printf("\nBuffer contains %u bytes after reading.\n\n", inbuf(&my_buf));
+//
+//    // Test 2: Overflow Test (Insert more than the buffer size)
+//    for (i = 0; i < 20; i++) {
+//        insertbuf(&my_buf, i + 0x61);  // Insert ASCII letters 'a' to 't' (20 bytes)
+//    }
+//
+//    printf("After inserting 20 bytes (a-t), causing overflow:\n");
+//    printf("Head: %u, Tail: %u\n", my_buf.head, my_buf.tail);
+//    printf("Buffer contains %u bytes.\n\n", inbuf(&my_buf));
+//
+//    // Test 3: Reading 10 bytes after overflow
+//    readbuf_into_buffer(&my_buf, dest, 10);
+//    printf("After reading 10 bytes after overflow:\n");
+//    printf("Head: %u, Tail: %u\n", my_buf.head, my_buf.tail);
+//    printf("Read bytes: ");
+//    for (i = 0; i < 10; i++) {
+//        printf("%c ", dest[i]);  // Should print the data in order after the tail moves
+//    }
+//    printf("\nBuffer contains %u bytes after reading.\n", inbuf(&my_buf));
+//
+//    return 0;
+//}
+

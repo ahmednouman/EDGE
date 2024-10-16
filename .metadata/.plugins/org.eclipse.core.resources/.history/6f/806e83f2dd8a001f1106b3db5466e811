@@ -1,0 +1,32 @@
+
+#ifndef INC_MAIN_APP_H_
+#define INC_MAIN_APP_H_
+
+#include <stdio.h>
+#include "hardware_init.h"
+#include "usb_device.h"
+
+#include "string.h"
+#include "usbd_cdc_if.h"
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
+
+#include "logging.h"
+#include "circular_buffer.h"
+#include "sht4x.h"
+
+
+//extern ADC_HandleTypeDef hadc1;
+//extern I2C_HandleTypeDef hi2c1;
+//extern TIM_HandleTypeDef htim3;
+//extern RTC_HandleTypeDef hrtc;
+//extern IWDG_HandleTypeDef hiwdg;
+
+//extern uint16_t period;
+
+void monitorTaskStack();
+
+#endif /* INC_MAIN_APP_H_ */
