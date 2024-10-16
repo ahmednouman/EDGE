@@ -9,7 +9,7 @@ This firmware is designed with a variety of techniques for task communication, r
 - **Shared Resource Management**: A circular buffer of LIFO type was used to synchronize and serialize data access between tasks and ISRs.
 
 <div align="center">
-    <img src="./images/taskArch.png" alt="FreeRTOS Architecture Diagram" width="600"/>
+    <img src="./images/taskArch.png" alt="FreeRTOS Architecture Diagram" width="700"/>
     <br>
     <img src="./images/buf.png" alt="Circular Buffer Diagram" width="300"/>
 </div>
