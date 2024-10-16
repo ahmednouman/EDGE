@@ -105,6 +105,6 @@ The log messages are Enabled or disabled using the ENABLE_LOGGING macro in loggi
 #endif
 ```
 <div align="center">
-    <img src="./images/log.png" alt="Log" width="400"/>
+    <img src="./images/log.png" alt="Log" width="350"/>
 </div>
 
