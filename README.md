@@ -3,7 +3,7 @@
 This firmware is designed with a variety of techniques for task communication, resource sharing, and peripheral control, while ensuring high performance. Below are key components and methodologies used:
 
 ## Architecture & Task Management
-- **FreeRTOS Kernel (v202406.01-LTS)**: was ported directly, without relying on the CMSIS library, to maintain an architecture-agnostic design. This approach ensures flexibility across different hardware platforms.
+- **FreeRTOS Kernel (v202406.01-LTS)**: was ported directly, without relying on the CMSIS layer, to maintain an architecture-agnostic design. This approach ensures flexibility across different hardware platforms.
 - **Task Communication & Synchronization**: Mutexes, semaphores, and direct notifications were used for efficient task/ISR synchronization.
 - **Polling, Interrupts, and DMA**: Implemented a blend of these mechanisms to balance performance with simplicity depending on the peripheral.
 - **Shared Resource Management**: A circular buffer of LIFO type was used to synchronize and serialize data access between tasks and ISRs.
