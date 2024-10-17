@@ -8,7 +8,7 @@
 #define CIRCULAR_BUF_SIZE 16
 
 typedef struct {
-    volatile uint32_t data[CIRCULAR_BUF_SIZE];
+    volatile uint16_t data[CIRCULAR_BUF_SIZE];
     volatile uint8_t head;
     volatile uint8_t tail;
 } circ_buf;
